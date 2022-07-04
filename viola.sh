@@ -26,17 +26,7 @@ sample=`head -n $SGE_TASK_ID $IDS | tail -n 1 | awk '{ print $4 }'`
 source activate viola-sv
 which python
 
-#echo "Call test script without args!"
-#python ./test.py
-
-
 echo "Call script with args!"
 python -u ./getConsensusCalls.py $manta $lumpy $delly $sample
-
-#echo "Call consensus script without args!"
-#python ./getConsensusCalls.py
-
-#echo "Call consensus script with args!"
-#python ./getConsensusCalls.py $manta $lumpy $delly $sample
 
 source deactivate
